@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+    tools:context=".FragmentBackground">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager2"
+        style="@style/viewpager" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img1"
+                android:src="@drawable/no_avatar_male"
+                app:civ_border_color="#CC2929"
+                app:civ_border_width="2dp"
+                style="@style/ci" />
+
+            <TextView
+                android:id="@+id/tv_male"
+                android:text="Boy"
+                style="@style/tvName" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lnYOM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btnyearold"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+<!--                    android:text="♂"-->
+
+                    <TextView
+                        android:id="@+id/tv_smale"
+                        android:text="♂"
+                        style="@style/tvS" />
+
+                    <TextView
+                        android:id="@+id/tv_tuoimale"
+                        android:text="0"
+                        style="@style/tvYO" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_cunghoandaomale"
+                    android:text="Nhân Mã"
+                    style="@style/tvCHD" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_indicator"
+                app:tabBackground="@drawable/indicator_selector"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@android:color/white"
+                style="@style/tap">
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <ImageView
+                android:id="@+id/imgHeart"
+                android:text=""
+                style="@style/imgheart" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img2"
+                android:src="@drawable/no_avatar_female"
+                app:civ_border_color="#CC2929"
+                app:civ_border_width="2dp"
+                style="@style/ci" />
+
+            <TextView
+                android:id="@+id/tv_female"
+                android:text="Girl"
+                style="@style/tvName" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lnYOF"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btnyearold"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_sfemale"
+                        android:text="♀"
+                        style="@style/tvS" />
+
+                    <TextView
+                        android:id="@+id/tv_tuoifemale"
+                        android:text="0"
+                        style="@style/tvYO" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_cunghoandaofemale"
+                    android:text="Nhân mã"
+                    style="@style/tvCHD" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--    <com.google.android.material.tabs.TabLayout-->
+    <!--        android:id="@+id/tabLayout2"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:tabIndicatorColor="@android:color/black"-->
+
+    <!--        app:tabMode="fixed"-->
+    <!--        app:tabSelectedTextColor="@android:color/black"-->
+    <!--        app:tabTextColor="@android:color/holo_green_dark">-->
+    <!--    </com.google.android.material.tabs.TabLayout>-->
+
+</LinearLayout>

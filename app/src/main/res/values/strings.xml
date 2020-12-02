@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Been love memory</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="title_splash">Tự hào ứng dụng Việt</string>
+
+
+    <string name="msg_error_unable_select_profile_pic">Unable to set profile image. Please try again!</string>
+    <string name="lbl_set_profile_photo">Set profile image</string>
+    <string name="lbl_take_camera_picture">Take a picture</string>
+    <string name="lbl_choose_from_gallery">Choose from gallery</string>
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+    <!-- font families -->
+    <string name="font_family_light">sans-serif-light</string>
+    <string name="font_family_medium">sans-serif-medium</string>
+    <string name="font_family_regular">sans-serif</string>
+    <string name="font_family_condensed">sans-serif-condensed</string>
+    <string name="font_family_black">sans-serif-black</string>
+    <string name="font_family_thin">sans-serif-thin</string>
+    <string name="dialog_permission_title">Grant Permissions</string>
+    <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="go_to_settings">GOTO SETTINGS</string>
+
+    <!--    insert_memory-->
+    <string name="themKN">Thêm kỷ niệm tình yêu</string>
+    <string name="NhapND">Nhập nội dung bạn muốn viết</string>
+    <string name="ChonNgay">Chọn ngày</string>
+    <string name="ChonAnh">Chọn ảnh:</string>
+    <!--    Activity_Lock-->
+    <string name="ChonLBM">Chọn loại bảo mật</string>
+    <!--    splash-->
+    <string name="version">ⓒ 2016-2020 BLM Studio Ltd.</string>
+    <!--    update_memory-->
+    <string name="ChinhSuaKM">Chỉnh sửa kỷ niệm tình yêu</string>
+    <!--    fragment_date-->
+    <string name="nam">Năm</string>
+    <string name="thang">Tháng</string>
+    <string name="tuan">Tuần</string>
+    <string name="ngay">Ngày</string>
+    <string name="gio">Giờ</string>
+    <string name="phut">Phút</string>
+    <string name="giay">Giây</string>
+    <!--    fragment_letter-->
+    <string name="gui">Gửi </string>
+    <string name="boy">Boy</string>
+    <string name="girl">Girl</string>
+    <string name="chungminh">Chúng mình đã yêu nhau được 0 năm, 0 tháng, 0 ngày, 0 giờ, 0 phút, 0 giây.</string>
+    <string name="maiyeu">Mãi yêu, </string>
+    <string name="beenLM">#beenlovememory</string>
+    <!--    frament_main-->
+    <string name="DY">Đang yêu</string>
+    <!--    numlock1_2-->
+    <string name="NhapPIN">Nhập mã PIN</string>
+    <string name="NhaplaiPIN">Nhập lại mã PIN</string>
+    <!--    patternlock-->
+    <string name="VeHinh">Vẽ hình</string>
+    <string name="VeLaiHinh">Vẽ lại hình</string>
+    <!--    wallpaper-->
+    <string name="ChonHinh">Chọn hình nền</string>
+    <!--    setting-->
+    <string name="cd">Cài đặt</string>
+    <string name="ads">Tạm ẩn quảng cáo</string>
+    <string name="font">Đổi font</string>
+    <string name="noti">Hiển thị thanh thông báo</string>
+    <string name="pass">Đặt mẩu khẩu riêng tư</string>
+    <string name="bd">Bắt đầu đếm từ 0</string>
+    <string name="bakup">Sao lưu và phục hồi</string>
+    <string name="morong">Mở rộng</string>
+    <string name="dongho">Đồng hồ Been Love Memory</string>
+    <string name="chd">12 Cung hoàng đạo</string>
+    <string name="tuvi">Xem bói và Tử vi 12 con Giáp</string>
+    <string name="tinnhan">Tin nhắn tình yêu</string>
+    <string name="fp">Fanpage trên Facebook</string>
+    <string name="review">Đánh giá ứng dụng</string>
+
+    <string name="ios">Phiên bản IOS</string>
+    <string name="share">Chia sẻ cho bạn bè</string>
+    <string name="phanhoi">Phản hồi</string>
+    <string name="baomat">Chính sách bảo mật</string>
+    <string name="phienban">Phiên bản (3.1.1)</string>
+
+
+</resources>

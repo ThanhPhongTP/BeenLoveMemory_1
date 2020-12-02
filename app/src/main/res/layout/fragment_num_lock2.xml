@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/frmLock2"
+    tools:context=".FragmentNumLock2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp">
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/NhaplaiPIN"
+            android:textColor="@color/clbg"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.andrognito.pinlockview.IndicatorDots
+            android:id="@+id/indicator_dots1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.andrognito.pinlockview.PinLockView
+            android:id="@+id/pin_lock_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:keypadButtonSize="80dp"
+            app:keypadShowDeleteButton="true"
+            app:keypadTextColor="@color/intro_title_color"
+            app:keypadTextSize="22sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fmMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentMain">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp">
+
+
+        <FrameLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="130dp"
+            android:padding="10dp">
+
+            <me.itangqi.waveloadingview.WaveLoadingView
+                android:id="@+id/wave_view"
+                android:layout_marginLeft="36dp"
+                android:layout_marginRight="36dp"
+                app:wlv_borderColor="@color/backgroud"
+                app:wlv_borderWidth="10dp"
+                app:wlv_wave_background_Color="#00FFFFFF"
+                app:wlv_progressValue="2"
+                app:wlv_round_rectangle="true"
+                app:wlv_shapeType="rectangle"
+                app:wlv_round_rectangle_x_and_y="100"
+                app:wlv_waveColor="@color/backgroud"
+                style="@style/imgTime" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                style="@style/imgTime">
+
+                <TextView
+                    android:id="@+id/title_above"
+                    android:text="@string/DY"
+                    android:textColor="#fff"
+                    android:textSize="22sp"
+                    style="@style/imgTime" />
+
+                <TextView
+                    android:id="@+id/tvday"
+                    android:text="0"
+                    android:padding="5dp"
+                    android:textColor="#fff"
+                    android:textSize="40sp"
+                    style="@style/imgTime" />
+
+                <TextView
+                    android:id="@+id/title_below"
+                    android:text="@string/ngay"
+                    android:textColor="#fff"
+                    android:textSize="22sp"
+                    style="@style/imgTime" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="30dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/title_above"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Đang yêu"-->
+<!--                android:textColor="#fff"-->
+<!--                android:textSize="22sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvday"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="0"-->
+<!--                android:textColor="#fff"-->
+<!--                android:textSize="40sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/title_below"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Ngày"-->
+<!--                android:textColor="#fff"-->
+<!--                android:textSize="22sp" />-->
+
+<!--        </LinearLayout>-->
+
+    </FrameLayout>
+
+</LinearLayout>
