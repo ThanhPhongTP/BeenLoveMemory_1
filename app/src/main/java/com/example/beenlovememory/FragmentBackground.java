@@ -57,6 +57,8 @@ import java.util.Calendar;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.example.beenlovememory.FragmentSetting.FONT;
+import static com.example.beenlovememory.FragmentSetting.SWITCHNOTI;
+import static com.example.beenlovememory.FragmentSetting.createNotification;
 
 public class FragmentBackground extends Fragment {
     private TabLayout tabLayout;
@@ -599,6 +601,12 @@ public class FragmentBackground extends Fragment {
                     editor.commit();
                     alertShowMale.cancel();
                 }
+
+                if (sharedPreferences.getBoolean(SWITCHNOTI, false)){
+                    Toast.makeText(getContext(), "sda", Toast.LENGTH_SHORT).show();
+                    createNotification();
+                } else
+                    return;
             }
         });
     }
@@ -637,6 +645,11 @@ public class FragmentBackground extends Fragment {
                     editor.commit();
                     alertShowMale.cancel();
                 }
+                if (sharedPreferences.getBoolean(SWITCHNOTI, false)){
+                    Toast.makeText(getContext(), "sda", Toast.LENGTH_SHORT).show();
+                    createNotification();
+                } else
+                    return;
             }
         });
     }

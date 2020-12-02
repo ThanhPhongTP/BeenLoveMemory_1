@@ -16,14 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowImageActivity"></activity>
-        <activity android:name=".UpdateDataActivity" />
+        <activity android:name=".ShowImageActivity"/>
+        <activity android:name=".UpdateLetterActivity" />
         <activity android:name=".WallpaperActivity" />
         <activity android:name=".LockScreenActivity" />
         <activity android:name=".LockSettingActivity" />
         <activity android:name=".InsertMemoryActivity" /> <!-- <activity android:name=".SplashActivity" /> -->
-        <activity android:name=".ImagePickerActivity" /> <!-- <activity android:name=".Main" /> -->
-        <activity android:name=".Main">
+        <activity android:name=".ImagePickerActivity" />
+         <activity android:name=".Main" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

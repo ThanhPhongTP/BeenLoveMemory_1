@@ -37,6 +37,8 @@ import java.util.Calendar;
 import me.itangqi.waveloadingview.WaveLoadingView;
 
 import static com.example.beenlovememory.FragmentSetting.FONT;
+import static com.example.beenlovememory.FragmentSetting.SWITCHNOTI;
+import static com.example.beenlovememory.FragmentSetting.createNotification;
 
 public class FragmentMain extends Fragment {
 
@@ -288,16 +290,23 @@ public class FragmentMain extends Fragment {
                 tvDay.setText(countDay + "");
 
 //                Toast.makeText(getContext(), mCurrentSelectedDate.getTimeInMillis() + "", Toast.LENGTH_LONG).show();
+
+
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putLong(sCountDay, mCurrentSelectedDate.getTimeInMillis());
                 editor.putInt(sDayStart, dayOfMonth);
                 editor.putInt(sMontStart, month);
                 editor.putInt(sYearStart, year);
                 editor.commit();
+
+                if (sharedPreferences.getBoolean(SWITCHNOTI, false)){
+                    Toast.makeText(getContext(), "sda", Toast.LENGTH_SHORT).show();
+                    createNotification();
+                } else
+                    return;
             }
         });
     }
-
 
     protected void dialogForCalendar(final MyDateSetListener listener) {
         if (mCurrentSelectedDate == null) {

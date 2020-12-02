@@ -42,11 +42,14 @@ import static com.example.beenlovememory.FragmentPatternLock2.PATERN;
 
 public class FragmentSetting extends Fragment {
 
+    private static Context context = null;
+
     Switch swMK, swNo;
     TextView tvFont, tvcd;
 
-    SharedPreferences sharedPreferences;
+    static SharedPreferences sharedPreferences;
     public static final String FONT = "FONT";
+    public static  final  String SWITCHNOTI = "NOTI";
     NotificationManagerCompat notificationManager;
     public static final String SWMK = "SWITCHMK";
     private ArrayList<Integer> mListFont;
@@ -65,15 +68,13 @@ public class FragmentSetting extends Fragment {
         notificationManager = NotificationManagerCompat.from(getContext());
         setControl(view);
         CheckSW();
-//        checkSP();
-//        super.onCreate(savedInstanceState);
-//        getActivity().setContentView(R.layout.fragment_letter);
+        context=getActivity(); //chuyển getActivity, getContext sang context dùng trong static(function createNotification)
         setEvent();
         return view;
     }
 
     private void CheckSW() {
-        if (sharedPreferences.getBoolean("SWITCHNO", false))
+        if (sharedPreferences.getBoolean(SWITCHNOTI, false))
             swNo.setChecked(true);
         else
             swNo.setChecked(false);
@@ -106,11 +107,11 @@ public class FragmentSetting extends Fragment {
             public void onClick(View v) {
                 if (swNo.isChecked()) {
                     createNotification();
-                    editor.putBoolean("SWITCHNO", true);
+                    editor.putBoolean(SWITCHNOTI, true);
                     editor.commit();
                 } else {
                     ClearNotification();
-                    editor.putBoolean("SWITCHNO", false);
+                    editor.putBoolean(SWITCHNOTI, false);
                     editor.commit();
                 }
             }
@@ -234,20 +235,11 @@ public class FragmentSetting extends Fragment {
         editor.commit();
     }
 
-    private void createNotification() {
-        final Handler handler = new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-
-                handler.postDelayed(this, 1000);
-                }
-            });
-        
-        final RemoteViews remoteViews = new RemoteViews(getActivity().getPackageName(), R.layout.notification);
-        Intent intent = new Intent(getContext(), Main.class);
+    public static void createNotification() {
+        final RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.notification);
+        Intent intent = new Intent(context, SplashActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         long sCount = sharedPreferences.getLong(sCountDay, 0);
         long hieuDay = Calendar.getInstance().getTimeInMillis() - sCount + HIEU_CHINH_THOI_GIAN;
@@ -262,7 +254,7 @@ public class FragmentSetting extends Fragment {
         remoteViews.setTextViewText(R.id.tvBoy, sBoy);
         remoteViews.setTextViewText(R.id.tvGirl, sGirl);
 
-        Notification notification = new NotificationCompat.Builder(getContext(), ID)
+        Notification notification = new NotificationCompat.Builder(context, ID)
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setCustomBigContentView(remoteViews)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -270,7 +262,7 @@ public class FragmentSetting extends Fragment {
                 .setAutoCancel(false)
                 .build();
         notification.flags = Notification.FLAG_NO_CLEAR;
-        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(0, notification);
     }
 

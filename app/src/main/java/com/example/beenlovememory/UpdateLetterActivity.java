@@ -28,7 +28,7 @@ import java.util.Calendar;
 
 import static com.example.beenlovememory.FragmentMain.HIEU_CHINH_THOI_GIAN;
 
-public class UpdateDataActivity extends AppCompatActivity {
+public class UpdateLetterActivity extends AppCompatActivity {
 
     Button btnSave;
     EditText edtDes;

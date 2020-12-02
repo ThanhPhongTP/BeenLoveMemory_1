@@ -1,34 +1,28 @@
 package com.example.beenlovememory.Adapter;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.beenlovememory.Database.Database;
 import com.example.beenlovememory.FragmentMemory;
-import com.example.beenlovememory.InsertMemoryActivity;
 import com.example.beenlovememory.Model.TimeLine;
 import com.example.beenlovememory.R;
 import com.example.beenlovememory.ShowImageActivity;
-import com.example.beenlovememory.UpdateDataActivity;
+import com.example.beenlovememory.UpdateLetterActivity;
 
 import java.util.ArrayList;
 
@@ -123,7 +117,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 btnFix.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(context, UpdateDataActivity.class);
+                        Intent intent = new Intent(context, UpdateLetterActivity.class);
                         intent.putExtra("DES", holder.tv_description.getText());
                         intent.putExtra("DATE", holder.tv_Date.getText());
                         intent.putExtra("IMG", data.get(position).getImg());
