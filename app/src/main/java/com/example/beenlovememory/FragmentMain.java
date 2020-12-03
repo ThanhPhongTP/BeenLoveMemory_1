@@ -152,10 +152,8 @@ public class FragmentMain extends Fragment {
                         waveLoadingView.setProgressValue(50);
                     else if (countDay <= 85)
                         waveLoadingView.setProgressValue(60);
-                    else if (countDay <= 100)
-                        waveLoadingView.setProgressValue(70);
                     else
-                        waveLoadingView.setProgressValue(80);
+                        waveLoadingView.setProgressValue(70);
 
 
 

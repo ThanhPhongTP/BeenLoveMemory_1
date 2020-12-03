@@ -102,11 +102,11 @@ public class FragmentLetter extends Fragment {
     private void getName() {
         if (sharedPreferences.contains(sNameMale)) {
             String sM = sharedPreferences.getString(sNameMale, "Nickname 1");
-            tvNick1.setText(sM);
+            tvNick1.setText( " " + sM);
         }
         if (sharedPreferences.contains(sNameFemale)) {
             String sM = sharedPreferences.getString(sNameFemale, "Nickname 2");
-            tvNick2.setText(sM);
+            tvNick2.setText(" " + sM);
         }
     }
 

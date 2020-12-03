@@ -33,8 +33,6 @@ public class ShowImageActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
     private void setControl() {
         img = findViewById(R.id.image);

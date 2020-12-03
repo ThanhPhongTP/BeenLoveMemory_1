@@ -398,12 +398,6 @@ public class FragmentBackground extends Fragment {
         }
     }
 
-    /**
-     * Showing Alert Dialog with Settings option
-     * Navigates user to app settings
-     * NOTE: Keep proper title and message depending on your app
-     */
-
     private void setAnimation() {
         a_ImgHeart = AnimationUtils.loadAnimation(getContext(), R.anim.animation_btnheart);
         ImgHeart.setAnimation(a_ImgHeart);

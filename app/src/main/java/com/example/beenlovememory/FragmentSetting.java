@@ -49,7 +49,7 @@ public class FragmentSetting extends Fragment {
 
     static SharedPreferences sharedPreferences;
     public static final String FONT = "FONT";
-    public static  final  String SWITCHNOTI = "NOTI";
+    public static final String SWITCHNOTI = "NOTI";
     NotificationManagerCompat notificationManager;
     public static final String SWMK = "SWITCHMK";
     private ArrayList<Integer> mListFont;
@@ -68,7 +68,7 @@ public class FragmentSetting extends Fragment {
         notificationManager = NotificationManagerCompat.from(getContext());
         setControl(view);
         CheckSW();
-        context=getActivity(); //chuyển getActivity, getContext sang context dùng trong static(function createNotification)
+        context = getActivity(); //chuyển getActivity, getContext sang context dùng trong static(function createNotification)
         setEvent();
         return view;
     }
@@ -266,7 +266,7 @@ public class FragmentSetting extends Fragment {
         notificationManager.notify(0, notification);
     }
 
-    private void ClearNotification(){
+    private void ClearNotification() {
         NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
         notificationManager.cancelAll();
     }

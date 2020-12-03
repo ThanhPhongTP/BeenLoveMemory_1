@@ -1,27 +1,39 @@
 package com.example.beenlovememory;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.beenlovememory.Adapter.FragmentAdapter;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
+
+import java.io.IOException;
 
 public class Main extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     FrameLayout frameLayout;
     SharedPreferences sharedPreferences;
+    boolean doubleBackToExitPressedOnce = false;
+    public static final int RESULT_FROM_CHANGBG = 4;
 
 
     private int imgResId[] = {
@@ -39,6 +51,7 @@ public class Main extends AppCompatActivity {
         setControl();
         setBG();
         checkBG();
+        getBGFromWallpaper();
         addTabs();
     }
 
@@ -62,10 +75,25 @@ public class Main extends AppCompatActivity {
 
     @SuppressLint("ResourceType")
     private void checkBG() {
+        //ảnh có sẵn
         if (sharedPreferences.contains("IMAGES")) {
             int nIMGS = sharedPreferences.getInt("IMAGES", R.drawable.img_bg1);
             frameLayout.setBackgroundResource(nIMGS);
         }
+        //ảnh từ camera/thư viện của device
+        if (sharedPreferences.contains("IMAGEBACKGROUND")) {
+            String sImg = sharedPreferences.getString("IMAGEBACKGROUND","");
+            Uri uri = Uri.parse(sImg + "");
+            if (uri != null){
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                    frameLayout.setBackground( new BitmapDrawable(getResources(), bitmap));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 
     private void addTabs() {
@@ -83,30 +111,6 @@ public class Main extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
     }
 
-//    private void setEvent(){
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentAdapter adapter = new FragmentAdapter(manager, this);
-//        viewPager.setAdapter(adapter);
-//        tabLayout.setupWithViewPager(viewPager);
-//        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-//        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
-//        //setIconTablayout();
-//    }
-//
-//
-//    private void setIconTablayout(){
-//        tabLayout.getTabAt(0).setIcon(imgResId[0]);
-//        tabLayout.getTabAt(1).setIcon(imgResId[1]);
-//        tabLayout.getTabAt(2).setIcon(imgResId[2]);
-//        tabLayout.getTabAt(3).setIcon(imgResId[3]);
-//        tabLayout.getTabAt(0).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(1).getIcon().setColorFilter(Color.WHITE,PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(2).getIcon().setColorFilter(Color.WHITE,PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(3).getIcon().setColorFilter(Color.WHITE,PorterDuff.Mode.SRC_IN);
-//    }
-
-    boolean doubleBackToExitPressedOnce = false;
-
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
@@ -121,6 +125,23 @@ public class Main extends AppCompatActivity {
                 doubleBackToExitPressedOnce = false;
             }
         }, 2000);
+    }
+
+    private void getBGFromWallpaper(){
+        SharedPreferences.Editor editor = sharedPreferences .edit();
+        Intent intent = getIntent();
+        String sBg = intent.getStringExtra("ChangeBG");
+        editor.putString("IMAGEBACKGROUND", sBg + "");
+        editor.commit();
+        Uri uri = Uri.parse(sBg + "");
+        if (uri != null){
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                frameLayout.setBackground( new BitmapDrawable(getResources(), bitmap));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void setControl() {
