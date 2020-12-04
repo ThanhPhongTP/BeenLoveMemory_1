@@ -206,6 +206,8 @@ public class FragmentBackground extends Fragment {
             int nColor = sharedPreferences.getInt(sColorHeart, currentBackgroundColor);
             changeBackgroundColorImgHeart(nColor);
         }
+        else
+            changeBackgroundColorImgHeart(R.color.backgroud);
         if (sharedPreferences.contains(sColorOM)) {
             CHOOSE_IMAGE = BOY;
             int nColorOM = sharedPreferences.getInt(sColorOM, currentBackgroundColor);

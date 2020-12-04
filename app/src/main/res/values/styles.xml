@@ -82,7 +82,7 @@
     <style name="viewpager">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">3</item>
+        <item name="android:layout_weight">7</item>
     </style>
 
     <style name="ci">

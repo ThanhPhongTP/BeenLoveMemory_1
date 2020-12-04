@@ -20,6 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.time.LocalDate;
+//import org.threeten.bp.LocalDateTime;
+//import org.threeten.bp.DateTimeUtils;
+
+//import org.threeten.bp.LocalDate;
+
 import java.time.Period;
 import java.util.Calendar;
 
@@ -115,6 +120,7 @@ public class FragmentDate extends Fragment {
                 if (dayStart == 0 || monthStart == 0)
                     setTimeDefault();
                 else {
+//                    Log.d("localdate", LocalDate.of(yearStart, monthStart, dayStart) + "");
                     int runDays = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getDays();
                     int runMonths = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getMonths();
                     int runYears = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getYears();

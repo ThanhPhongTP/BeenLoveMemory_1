@@ -8,102 +8,58 @@
     android:orientation="vertical"
     tools:context=".FragmentMain">
 
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/wave_margin_top"
+        android:layout_marginBottom="@dimen/wave_margin_bottom">
 
+        <me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/wave_view"
+            style="@style/imgTime"
+            android:layout_marginLeft="@dimen/wave_margin_left"
+            android:layout_marginRight="@dimen/wave_margin_right"
+            app:wlv_borderColor="@color/backgroud"
+            app:wlv_borderWidth="10dp"
+            app:wlv_progressValue="2"
+            app:wlv_round_rectangle="true"
+            app:wlv_round_rectangle_x_and_y="100"
+            app:wlv_shapeType="rectangle"
+            app:wlv_waveColor="@color/backgroud"
+            app:wlv_wave_background_Color="#00FFFFFF" />
 
-        <FrameLayout
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="130dp"
-            android:padding="10dp">
+            android:layout_gravity="center">
 
-            <me.itangqi.waveloadingview.WaveLoadingView
-                android:id="@+id/wave_view"
-                android:layout_marginLeft="36dp"
-                android:layout_marginRight="36dp"
-                app:wlv_borderColor="@color/backgroud"
-                app:wlv_borderWidth="10dp"
-                app:wlv_wave_background_Color="#00FFFFFF"
-                app:wlv_progressValue="2"
-                app:wlv_round_rectangle="true"
-                app:wlv_shapeType="rectangle"
-                app:wlv_round_rectangle_x_and_y="100"
-                app:wlv_waveColor="@color/backgroud"
-                style="@style/imgTime" />
+            <TextView
+                android:id="@+id/title_above"
+                style="@style/imgTime"
+                android:text="@string/DY"
+                android:textColor="#fff"
+                android:textSize="22sp" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                style="@style/imgTime">
+            <TextView
+                android:id="@+id/tvday"
+                style="@style/imgTime"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="40sp" />
 
-                <TextView
-                    android:id="@+id/title_above"
-                    android:text="@string/DY"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    style="@style/imgTime" />
+            <TextView
+                android:id="@+id/title_below"
+                style="@style/imgTime"
+                android:text="@string/ngay"
+                android:textColor="#fff"
+                android:textSize="22sp" />
 
-                <TextView
-                    android:id="@+id/tvday"
-                    android:text="0"
-                    android:padding="5dp"
-                    android:textColor="#fff"
-                    android:textSize="40sp"
-                    style="@style/imgTime" />
-
-                <TextView
-                    android:id="@+id/title_below"
-                    android:text="@string/ngay"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    style="@style/imgTime" />
-
-            </LinearLayout>
-
-        </FrameLayout>
-
-
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:orientation="vertical"-->
-<!--            android:padding="30dp">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/title_above"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:text="Đang yêu"-->
-<!--                android:textColor="#fff"-->
-<!--                android:textSize="22sp" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tvday"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:text="0"-->
-<!--                android:textColor="#fff"-->
-<!--                android:textSize="40sp" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/title_below"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:text="Ngày"-->
-<!--                android:textColor="#fff"-->
-<!--                android:textSize="22sp" />-->
-
-<!--        </LinearLayout>-->
+        </LinearLayout>
 
     </FrameLayout>
+
 
 </LinearLayout>
