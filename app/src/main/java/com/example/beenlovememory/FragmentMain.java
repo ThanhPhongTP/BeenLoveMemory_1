@@ -46,13 +46,14 @@ public class FragmentMain extends Fragment {
     public static final String sDayStart = "DAYSTART";
     public static final String sMontStart = "MONTHSART";
     public static final String sYearStart = "YEARSTAR";
+    public static final String SHAREDATE = "SHAREDATE";
     String TITLEABOVE = "TITLEABOVE";
     String TITLEBELOW = "TITLEBELOW";
 
     public static TextView tvDay, tvTitleAbove, tvTitleBelow;
 
     SharedPreferences sharedPreferences;
-    public static final int HIEU_CHINH_THOI_GIAN = 60000 * 60;// giay 1h
+    public static final int HIEU_CHINH_THOI_GIAN = 60000 * 60;// mili giay 1h
     Calendar mCurrentSelectedDate;
     WaveLoadingView waveLoadingView;
     private Typeface tf;
@@ -291,6 +292,9 @@ public class FragmentMain extends Fragment {
 
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                int nDate = currentSelectedDate.get(Calendar.DATE);
+                editor.putInt(SHAREDATE,nDate);
+
                 editor.putLong(sCountDay, mCurrentSelectedDate.getTimeInMillis());
                 editor.putInt(sDayStart, dayOfMonth);
                 editor.putInt(sMontStart, month);

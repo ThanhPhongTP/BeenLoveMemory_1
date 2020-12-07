@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -18,16 +19,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 //import org.threeten.bp.LocalDateTime;
-//import org.threeten.bp.DateTimeUtils;
+import org.threeten.bp.DateTimeUtils;
 
 //import org.threeten.bp.LocalDate;
+import org.threeten.bp.format.DateTimeFormatter;
 
 import java.time.Period;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
+import static com.example.beenlovememory.FragmentMain.SHAREDATE;
 import static com.example.beenlovememory.FragmentMain.sDayStart;
 import static com.example.beenlovememory.FragmentMain.sMontStart;
 import static com.example.beenlovememory.FragmentMain.sYearStart;
@@ -54,6 +63,18 @@ public class FragmentDate extends Fragment {
         runTime();
 
         getFontFromSetting();
+
+//        String valid_until = "1/1/1990";
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//        Date strDate = null;
+//        try {
+//            strDate = sdf.parse(valid_until);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        if (new Date().after(strDate)) {
+//
+//        }
 
         return view;
     }
@@ -108,6 +129,7 @@ public class FragmentDate extends Fragment {
                 int dayStart = sharedPreferences.getInt(sDayStart, 0);
                 int monthStart = sharedPreferences.getInt(sMontStart, 0);
                 int yearStart = sharedPreferences.getInt(sYearStart, 0);
+                int nDate = sharedPreferences.getInt(SHAREDATE,  0);
 
                 Calendar calendar = Calendar.getInstance();
                 int d = calendar.get(Calendar.DAY_OF_MONTH);
@@ -125,10 +147,34 @@ public class FragmentDate extends Fragment {
                     int runMonths = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getMonths();
                     int runYears = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getYears();
 
-                    long runWeek = runDays / 7;
-                    int nDayle = runDays % 7;
+//                    long days = 0;
+//                    int runMonths = 0;
+//                    DateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+//                    Date date1 = null;
+//                    Date date2 = null;
+//
+//                    try {
+//                        date1 = simpleDateFormat.parse(d + "-" + M + "-" + y);
+//                        date2 = simpleDateFormat.parse(dayStart + "-" + monthStart + "-" + yearStart);
+//                    } catch (ParseException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    days = date1.getTime() - date2.getTime();
+//
+//                    long runDays = TimeUnit.MILLISECONDS.toDays(days);
+//
+//                    if (M > monthStart)
+//                        runMonths = M - monthStart;
+//                    else
+//                        runMonths = monthStart - M;
+//
+//                    int runYears = y - yearStart;
 
-//                    Log.d("abcc", runWeek + "");
+                    long runWeek = (runDays / 7) % 4;
+                    long nDayle = runDays % 7;
+
+//                    Log.d("abcc", runDays + "");
 //                Log.d("abca", runDays + "");
                     tvDay1.setText(nDayle + "");
                     tvMonth.setText(runMonths + "");
