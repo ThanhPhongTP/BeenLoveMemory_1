@@ -21,20 +21,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
 //import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.DateTimeUtils;
 
+
+import org.threeten.bp.Instant;
 //import org.threeten.bp.LocalDate;
-import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.ZoneId;
+import org.threeten.bp.temporal.ChronoUnit;
 
 import java.time.Period;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 import static com.example.beenlovememory.FragmentMain.SHAREDATE;
 import static com.example.beenlovememory.FragmentMain.sDayStart;
@@ -129,7 +127,6 @@ public class FragmentDate extends Fragment {
                 int dayStart = sharedPreferences.getInt(sDayStart, 0);
                 int monthStart = sharedPreferences.getInt(sMontStart, 0);
                 int yearStart = sharedPreferences.getInt(sYearStart, 0);
-                int nDate = sharedPreferences.getInt(SHAREDATE,  0);
 
                 Calendar calendar = Calendar.getInstance();
                 int d = calendar.get(Calendar.DAY_OF_MONTH);
@@ -142,10 +139,18 @@ public class FragmentDate extends Fragment {
                 if (dayStart == 0 || monthStart == 0)
                     setTimeDefault();
                 else {
-//                    Log.d("localdate", LocalDate.of(yearStart, monthStart, dayStart) + "");
-                    int runDays = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getDays();
-                    int runMonths = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getMonths();
-                    int runYears = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getYears();
+
+                    long runDays, runMonths = 0, runYears, Months = 0;
+                    if (Build.VERSION.SDK_INT >= 26){
+                        runDays = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getDays();
+                     runMonths = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getMonths();
+                     runYears = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getYears();
+                    }
+                    else {
+                        runDays = ChronoUnit.DAYS.between( org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart),  org.threeten.bp.LocalDate.of(y, M, d));
+                         Months =  ChronoUnit.MONTHS.between( org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart),  org.threeten.bp.LocalDate.of(y, M, d));
+                         runYears = ChronoUnit.YEARS.between( org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart),  org.threeten.bp.LocalDate.of(y, M, d));
+                    }
 
 //                    long days = 0;
 //                    int runMonths = 0;
@@ -171,13 +176,15 @@ public class FragmentDate extends Fragment {
 //
 //                    int runYears = y - yearStart;
 
-                    long runWeek = (runDays / 7) % 4;
+                    long runWeek = runDays / 7 % 4;
                     long nDayle = runDays % 7;
+                    long runMonths1 = Months % 12;
 
-//                    Log.d("abcc", runDays + "");
-//                Log.d("abca", runDays + "");
                     tvDay1.setText(nDayle + "");
-                    tvMonth.setText(runMonths + "");
+                    if (Build.VERSION.SDK_INT >= 26)
+                        tvMonth.setText(runMonths + "");
+                    else 
+                        tvMonth.setText(runMonths1 + "");
                     tvYear.setText(runYears + "");
                     tvHour.setText(h + "");
                     tvMinute.setText(m + "");

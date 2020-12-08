@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.threeten.bp.temporal.ChronoUnit;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Calendar;
@@ -84,9 +86,17 @@ public class FragmentLetter extends Fragment {
                 if (dayStart == 0 || monthStart == 0)
                     setTimeDefault();
                 else {
-                    int runDays = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getDays();
-                    int runMonths = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getMonths();
-                    int runYears = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getYears();
+                    long runDays = 0, runMonths = 0, runYears = 0, Months = 0;
+                    if (Build.VERSION.SDK_INT >= 26) {
+                        runDays = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getDays();
+                        runMonths = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getMonths();
+                        runYears = Period.between(LocalDate.of(yearStart, monthStart, dayStart), LocalDate.of(y, M, d)).getYears();
+                    } else {
+                        runDays = ChronoUnit.DAYS.between(org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart), org.threeten.bp.LocalDate.of(y, M, d));
+                        Months = ChronoUnit.MONTHS.between(org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart), org.threeten.bp.LocalDate.of(y, M, d));
+                        runYears = ChronoUnit.YEARS.between(org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart), org.threeten.bp.LocalDate.of(y, M, d));
+                        runMonths = Months % 12;
+                    }
                     tvDes.setText("Chúng mình đã yêu nhau được " + runYears + " năm, " + runMonths + " tháng, "
                             + runDays + " ngày, " + h + " giờ, " + m + " phút, " + s + " giây.");
                 }
@@ -96,13 +106,13 @@ public class FragmentLetter extends Fragment {
     }
 
     private void setTimeDefault() {
-        tvDes.setText("Chúng mình đã yêu nhau được 0 năm, 0 tháng, 0 ngày, 0 giờ, 0 phút, 0 giây.");
+        tvDes.setText(R.string.chungminh);
     }
 
     private void getName() {
         if (sharedPreferences.contains(sNameMale)) {
             String sM = sharedPreferences.getString(sNameMale, "Nickname 1");
-            tvNick1.setText( " " + sM);
+            tvNick1.setText(" " + sM);
         }
         if (sharedPreferences.contains(sNameFemale)) {
             String sM = sharedPreferences.getString(sNameFemale, "Nickname 2");

@@ -155,9 +155,6 @@ public class FragmentMain extends Fragment {
                         waveLoadingView.setProgressValue(60);
                     else
                         waveLoadingView.setProgressValue(70);
-
-
-
                 }
                 handler.postDelayed(this, 1000);
             }
@@ -282,19 +279,10 @@ public class FragmentMain extends Fragment {
                 int year = currentSelectedDate.get(Calendar.YEAR);
 
                 long hieuDay = Calendar.getInstance().getTimeInMillis() - mCurrentSelectedDate.getTimeInMillis() + HIEU_CHINH_THOI_GIAN;
-
                 long countDay = hieuDay / 86400000;
-//                        int countDay;
-//                        countDay = Period.between(LocalDate.of(year, month, dayOfMonth), LocalDate.of(y, m, d)).getDays();
                 tvDay.setText(countDay + "");
-
 //                Toast.makeText(getContext(), mCurrentSelectedDate.getTimeInMillis() + "", Toast.LENGTH_LONG).show();
-
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                int nDate = currentSelectedDate.get(Calendar.DATE);
-                editor.putInt(SHAREDATE,nDate);
-
                 editor.putLong(sCountDay, mCurrentSelectedDate.getTimeInMillis());
                 editor.putInt(sDayStart, dayOfMonth);
                 editor.putInt(sMontStart, month);
