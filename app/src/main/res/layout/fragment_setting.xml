@@ -63,7 +63,7 @@
                     android:textColor="#fff"
                     android:layout_marginLeft="10dp"
                     android:theme="@style/SCBSwitch"
-                    android:text="Giao diện Lite" />
+                    android:text="@string/lite" />
 
 
             </LinearLayout>
@@ -87,7 +87,7 @@
                     android:textSize="18sp"
                     android:textColor="#fff"
                     android:layout_weight="5"
-                    android:text="Khóa màn hình tình yêu"/>
+                    android:text="@string/ll"/>
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -116,7 +116,7 @@
                     android:layout_weight="5"
                     android:textSize="18sp"
                     android:textColor="#fff"
-                    android:text="1 Chạm BLM"/>
+                    android:text="@string/touchBML"/>
 
                 <Switch
                     android:layout_width="wrap_content"

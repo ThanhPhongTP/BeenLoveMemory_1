@@ -183,11 +183,11 @@ public class FragmentBackground extends Fragment {
             tvTuoiFemale.setText(nOFM + "");
         }
         if (sharedPreferences.contains(CHDMALE)) {
-            String s = sharedPreferences.getString(CHDMALE, "Nhân Mã");
+            String s = sharedPreferences.getString(CHDMALE, getResources().getString(R.string.Aries));
             tvCHDMale.setText(s + "");
         }
         if (sharedPreferences.contains(CHDFEMALE)) {
-            String s = sharedPreferences.getString(CHDFEMALE, "Nhân Mã");
+            String s = sharedPreferences.getString(CHDFEMALE, getResources().getString(R.string.Aries));
             tvCHDFemale.setText(s + "");
         }
         if (sharedPreferences.contains(sImgBoy)) {
@@ -468,29 +468,29 @@ public class FragmentBackground extends Fragment {
 
                 String sCHD = "";
                 if ((dayOfMonth >= 21 && month == 3) || (dayOfMonth <= 19 && month == 4))
-                    sCHD = "Bạch Dương";
+                    sCHD = getResources().getString(R.string.Aries);
                 if ((dayOfMonth >= 20 && month == 4) || (dayOfMonth <= 20 && month == 5))
-                    sCHD = "Kim Ngưu";
+                    sCHD = getResources().getString(R.string.Taurus);
                 if ((dayOfMonth >= 21 && month == 5) || (dayOfMonth <= 20 && month == 6))
-                    sCHD = "Song Tử";
+                    sCHD = getResources().getString(R.string.Gemini);
                 if ((dayOfMonth >= 21 && month == 6) || (dayOfMonth <= 22 && month == 7))
-                    sCHD = "Cự Giải";
+                    sCHD = getResources().getString(R.string.Cancer);
                 if ((dayOfMonth >= 23 && month == 7) || (dayOfMonth <= 22 && month == 8))
-                    sCHD = "Sư Tử";
+                    sCHD = getResources().getString(R.string.Leo);
                 if ((dayOfMonth >= 23 && month == 8) || (dayOfMonth <= 22 && month == 9))
-                    sCHD = "Xử Nữ";
+                    sCHD = getResources().getString(R.string.Virgo);
                 if ((dayOfMonth >= 23 && month == 9) || (dayOfMonth <= 23 && month == 10))
-                    sCHD = "Thiên Bình";
+                    sCHD = getResources().getString(R.string.Libra);
                 if ((dayOfMonth >= 23 && month == 10) || (dayOfMonth <= 22 && month == 11))
-                    sCHD = "Bọ Cạp";
+                    sCHD = getResources().getString(R.string.Scorpio);
                 if ((dayOfMonth >= 23 && month == 11) || (dayOfMonth <= 21 && month == 12))
-                    sCHD = "Nhân Mã";
+                    sCHD = getResources().getString(R.string.Sagittarius);
                 if ((dayOfMonth >= 22 && month == 12) || (dayOfMonth <= 19 && month == 1))
-                    sCHD = "Ma Kết";
+                    sCHD = getResources().getString(R.string.Capricorn);
                 if ((dayOfMonth >= 20 && month == 1) || (dayOfMonth <= 18 && month == 2))
-                    sCHD = "Bảo Bình";
+                    sCHD = getResources().getString(R.string.Aquarius);
                 if ((dayOfMonth >= 19 && month == 2) || (dayOfMonth <= 20 && month == 3))
-                    sCHD = "Song Ngư";
+                    sCHD = getResources().getString(R.string.Pisces);
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 if (CHOOSE_IMAGE == BOY) {

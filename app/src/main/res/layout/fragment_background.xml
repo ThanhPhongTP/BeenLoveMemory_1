@@ -72,7 +72,7 @@
 
                 <TextView
                     android:id="@+id/btn_cunghoandaomale"
-                    android:text="Nhân Mã"
+                    android:text="@string/Aries"
                     style="@style/tvCHD" />
 
             </LinearLayout>
@@ -151,7 +151,7 @@
 
                 <TextView
                     android:id="@+id/btn_cunghoandaofemale"
-                    android:text="Nhân mã"
+                    android:text="@string/Aries"
                     style="@style/tvCHD" />
 
             </LinearLayout>

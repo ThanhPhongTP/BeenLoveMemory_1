@@ -32,7 +32,7 @@
             android:layout_height="45dp"
             android:background="@drawable/btnyearold"
             android:textColor="#fff"
-            android:text="nhập"/>
+            android:text="@string/Nhap"/>
     </LinearLayout>
 
 </LinearLayout>

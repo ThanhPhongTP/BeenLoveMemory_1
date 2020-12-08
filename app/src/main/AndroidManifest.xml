@@ -11,28 +11,46 @@
     <application
         android:name=".Notification.App"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
-        android:requestLegacyExternalStorage="true"
         android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:largeHeap="true"
-        android:hardwareAccelerated="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <!-- android:requestLegacyExternalStorage="true" xin quyen android 10-->
         <!-- tools:ignore="GoogleAppIndexingWarning" xin quyen android 10-->
         <!--android:largeHeap="true"-->
         <!--android:hardwareAccelerated="false" Hien bitmap mot so moi truong khong du bo nho-->
-        <activity android:name=".ShowImageActivity"/>
-        <activity android:name=".UpdateLetterActivity" />
-        <activity android:name=".WallpaperActivity" />
-        <activity android:name=".LockScreenActivity" />
-        <activity android:name=".LockSettingActivity" />
-        <activity android:name=".InsertMemoryActivity" /> <!-- <activity android:name=".SplashActivity" /> -->
-        <activity android:name=".ImagePickerActivity" />
-         <activity android:name=".Main" />
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".ShowImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateLetterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WallpaperActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LockScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LockSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InsertMemoryActivity"
+            android:screenOrientation="portrait" /> <!-- <activity android:name=".SplashActivity" /> -->
+        <activity
+            android:name=".ImagePickerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

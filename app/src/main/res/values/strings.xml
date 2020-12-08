@@ -1,86 +1,103 @@
 <resources>
-    <string name="app_name">Been love memory</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="title_splash">Tự hào ứng dụng Việt</string>
+    <string name="title_splash">Proud Vietnamese application</string>
 
 
-    <string name="msg_error_unable_select_profile_pic">Unable to set profile image. Please try again!</string>
-    <string name="lbl_set_profile_photo">Set profile image</string>
-    <string name="lbl_take_camera_picture">Take a picture</string>
-    <string name="lbl_choose_from_gallery">Choose from gallery</string>
-    <string name="toast_image_intent_null">Image picker option is missing!</string>
+    <string name="msg_error_unable_select_profile_pic" translatable="false">Unable to set profile image. Please try again!</string>
+    <string name="lbl_set_profile_photo" translatable="false">Set profile image</string>
+    <string name="lbl_take_camera_picture" translatable="false">Take a picture</string>
+    <string name="lbl_choose_from_gallery" translatable="false">Choose from gallery</string>
+    <string name="toast_image_intent_null" translatable="false">Image picker option is missing!</string>
     <!-- font families -->
-    <string name="font_family_light">sans-serif-light</string>
-    <string name="font_family_medium">sans-serif-medium</string>
-    <string name="font_family_regular">sans-serif</string>
-    <string name="font_family_condensed">sans-serif-condensed</string>
-    <string name="font_family_black">sans-serif-black</string>
-    <string name="font_family_thin">sans-serif-thin</string>
-    <string name="dialog_permission_title">Grant Permissions</string>
-    <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
-    <string name="go_to_settings">GOTO SETTINGS</string>
+    <string name="font_family_light" translatable="false">sans-serif-light</string>
+    <string name="font_family_medium" translatable="false">sans-serif-medium</string>
+    <string name="font_family_regular" translatable="false">sans-serif</string>
+    <string name="font_family_condensed" translatable="false">sans-serif-condensed</string>
+    <string name="font_family_black" translatable="false">sans-serif-black</string>
+    <string name="font_family_thin" translatable="false">sans-serif-thin</string>
+    <string name="dialog_permission_title" translatable="false">Grant Permissions</string>
+    <string name="dialog_permission_message" translatable="false">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="go_to_settings" translatable="false">GOTO SETTINGS</string>
 
     <!--    insert_memory-->
-    <string name="themKN">Thêm kỷ niệm tình yêu</string>
-    <string name="NhapND">Nhập nội dung bạn muốn viết</string>
-    <string name="ChonNgay">Chọn ngày</string>
-    <string name="ChonAnh">Chọn ảnh:</string>
+    <string name="themKN">Add memories of love</string>
+    <string name="NhapND">Enter what you want to write</string>
+    <string name="ChonNgay">Choose a date</string>
+    <string name="ChonAnh">Choose photo:</string>
     <!--    Activity_Lock-->
-    <string name="ChonLBM">Chọn loại bảo mật</string>
+    <string name="ChonLBM">Choose a security type</string>
     <!--    splash-->
-    <string name="version">ⓒ 2016-2020 BLM Studio Ltd.</string>
+    <string name="version" translatable="false">ⓒ 2016-2020 BLM Studio Ltd.</string>
     <!--    update_memory-->
-    <string name="ChinhSuaKM">Chỉnh sửa kỷ niệm tình yêu</string>
+    <string name="ChinhSuaKM">Edit love memories</string>
     <!--    fragment_date-->
-    <string name="nam">Năm</string>
-    <string name="thang">Tháng</string>
-    <string name="tuan">Tuần</string>
-    <string name="ngay">Ngày</string>
-    <string name="gio">Giờ</string>
-    <string name="phut">Phút</string>
-    <string name="giay">Giây</string>
+    <string name="nam">Year</string>
+    <string name="thang">Month</string>
+    <string name="tuan">Week</string>
+    <string name="ngay">Day</string>
+    <string name="gio">Hour</string>
+    <string name="phut">Minute</string>
+    <string name="giay">Second</string>
     <!--    fragment_letter-->
-    <string name="gui">Gửi </string>
-    <string name="boy">Boy</string>
-    <string name="girl">Girl</string>
-    <string name="chungminh">Chúng mình đã yêu nhau được 0 năm, 0 tháng, 0 ngày, 0 giờ, 0 phút, 0 giây.</string>
-    <string name="maiyeu">Mãi yêu, </string>
-    <string name="beenLM">#beenlovememory</string>
+    <string name="gui">Send </string>
+    <string name="boy" translatable="false">Boy</string>
+    <string name="girl" translatable="false">Girl</string>
+    <string name="chungminh">We have been in love for 0 years, 0 months, 0 days, 0 hours, 0 minutes, 0 seconds.</string>
+    <string name="maiyeu">Love forever, </string>
+    <string name="beenLM" translatable="false">#beenlovememory</string>
     <!--    frament_main-->
-    <string name="DY">Đang yêu</string>
+    <string name="DY">In love</string>
     <!--    numlock1_2-->
-    <string name="NhapPIN">Nhập mã PIN</string>
-    <string name="NhaplaiPIN">Nhập lại mã PIN</string>
+    <string name="NhapPIN">Enter the PIN code</string>
+    <string name="NhaplaiPIN">Re-enter the PIN</string>
     <!--    patternlock-->
-    <string name="VeHinh">Vẽ hình</string>
-    <string name="VeLaiHinh">Vẽ lại hình</string>
+    <string name="VeHinh">Draw a pattern</string>
+    <string name="VeLaiHinh">Redraw a pattern</string>
     <!--    wallpaper-->
-    <string name="ChonHinh">Chọn hình nền</string>
+    <string name="ChonHinh">Choose a wallpaper</string>
     <!--    setting-->
-    <string name="cd">Cài đặt</string>
-    <string name="ads">Tạm ẩn quảng cáo</string>
-    <string name="font">Đổi font</string>
-    <string name="noti">Hiển thị thanh thông báo</string>
-    <string name="pass">Đặt mẩu khẩu riêng tư</string>
+    <string name="cd">Setting</string>
+    <string name="lite">Lite interface</string>
+    <string name="ll">love lock screen</string>
+    <string name="touchBML">1 touch BLM</string>
+    <string name="ads">Hide ads</string>
+    <string name="font">Change the font</string>
+    <string name="noti">Show notification bar</string>
+    <string name="pass">Set a private password</string>
+    <string name="bakup">Backup and restore</string>
     <string name="bd">Bắt đầu đếm từ 0</string>
-    <string name="bakup">Sao lưu và phục hồi</string>
-    <string name="morong">Mở rộng</string>
-    <string name="dongho">Đồng hồ Been Love Memory</string>
-    <string name="chd">12 Cung hoàng đạo</string>
-    <string name="tuvi">Xem bói và Tử vi 12 con Giáp</string>
-    <string name="tinnhan">Tin nhắn tình yêu</string>
-    <string name="fp">Fanpage trên Facebook</string>
-    <string name="review">Đánh giá ứng dụng</string>
+    <string name="morong">Extend</string>
+    <string name="dongho">Been Love Memory watches</string>
+    <string name="chd">12 signs of the zodiac</string>
+    <string name="tuvi">See fortune-telling and Horoscopes 12 Zodiacs</string>
+    <string name="tinnhan">Love messages</string>
+    <string name="fp">Fanpage on Facebook</string>
+    <string name="review">App reviews</string>
 
-    <string name="ios">Phiên bản IOS</string>
-    <string name="share">Chia sẻ cho bạn bè</string>
-    <string name="phanhoi">Phản hồi</string>
-    <string name="baomat">Chính sách bảo mật</string>
-    <string name="phienban">Phiên bản (3.1.1)</string>
+    <string name="ios">IOS version</string>
+    <string name="share">Share your friends</string>
+    <string name="phanhoi">Feedback</string>
+    <string name="baomat">Privacy Policy</string>
+    <string name="phienban">Version (3.1.1)</string>
 
+    <string name="Nhap">Enter</string>
+
+<!--    12 con giáp-->
+    <string name="Aries">Aries</string>
+    <string name="Taurus">Taurus</string>
+    <string name="Gemini">Gemini</string>
+    <string name="Cancer">Cancer</string>
+    <string name="Leo">Leo</string>
+    <string name="Virgo">Virgo</string>
+    <string name="Libra">Libra</string>
+    <string name="Scorpio">Scorpio</string>
+    <string name="Sagittarius">Sagittarius</string>
+    <string name="Capricorn">Capricorn</string>
+    <string name="Aquarius">Aquarius</string>
+    <string name="Pisces">Pisces</string>
 
 </resources>

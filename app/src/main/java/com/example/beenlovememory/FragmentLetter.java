@@ -97,8 +97,8 @@ public class FragmentLetter extends Fragment {
                         runYears = ChronoUnit.YEARS.between(org.threeten.bp.LocalDate.of(yearStart, monthStart, dayStart), org.threeten.bp.LocalDate.of(y, M, d));
                         runMonths = Months % 12;
                     }
-                    tvDes.setText("Chúng mình đã yêu nhau được " + runYears + " năm, " + runMonths + " tháng, "
-                            + runDays + " ngày, " + h + " giờ, " + m + " phút, " + s + " giây.");
+                    tvDes.setText("We have been in love for " + runYears + " years, " + runMonths + " months, "
+                            + runDays + " days, " + h + " hours, " + m + " minutes, " + s + " seconds.");
                 }
                 handler.postDelayed(this, 1000);
             }
