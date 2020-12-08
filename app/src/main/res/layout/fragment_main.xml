@@ -21,11 +21,11 @@
             android:layout_marginLeft="@dimen/wave_margin_left"
             android:layout_marginRight="@dimen/wave_margin_right"
             app:wlv_borderColor="@color/backgroud"
-            app:wlv_borderWidth="10dp"
+            app:wlv_borderWidth="3dp"
             app:wlv_progressValue="2"
             app:wlv_round_rectangle="true"
             app:wlv_round_rectangle_x_and_y="100"
-            app:wlv_shapeType="rectangle"
+            app:wlv_shapeType="circle"
             app:wlv_waveColor="@color/backgroud"
             app:wlv_wave_background_Color="#00FFFFFF" />
 

@@ -16,10 +16,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <!-- android:requestLegacyExternalStorage="true" xin quyen android 10-->
         <!-- tools:ignore="GoogleAppIndexingWarning" xin quyen android 10-->
+        <!--android:largeHeap="true"-->
+        <!--android:hardwareAccelerated="false" Hien bitmap mot so moi truong khong du bo nho-->
         <activity android:name=".ShowImageActivity"/>
         <activity android:name=".UpdateLetterActivity" />
         <activity android:name=".WallpaperActivity" />

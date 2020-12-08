@@ -207,7 +207,7 @@ public class FragmentBackground extends Fragment {
             changeBackgroundColorImgHeart(nColor);
         }
         else
-            changeBackgroundColorImgHeart(R.color.backgroud);
+            changeBackgroundColorImgHeart(Color.argb(255,255,0,132));
         if (sharedPreferences.contains(sColorOM)) {
             CHOOSE_IMAGE = BOY;
             int nColorOM = sharedPreferences.getInt(sColorOM, currentBackgroundColor);
@@ -385,7 +385,6 @@ public class FragmentBackground extends Fragment {
                     editor.putString(sImgGirl, uri.toString());
                     editor.commit();
                 }
-
             }
         }
     }
@@ -396,8 +395,6 @@ public class FragmentBackground extends Fragment {
     }
 
     private void showColorPickerDialog() {
-//        final SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         ColorPickerDialogBuilder
                 .with(getActivity())
@@ -409,7 +406,7 @@ public class FragmentBackground extends Fragment {
                     @Override
                     public void onColorSelected(int selectedColor) {
 //                        colorSelected = adjustAlpha(selectedColor, 0.6f);
-                        Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setPositiveButton(("ok"), new ColorPickerClickListener() {
