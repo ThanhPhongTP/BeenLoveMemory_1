@@ -7,7 +7,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
@@ -19,10 +18,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -48,6 +45,9 @@ import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.tabs.TabLayout;
 
 import java.time.LocalDate;
@@ -107,6 +107,7 @@ public class FragmentBackground extends Fragment {
     public static final int HIEU_CHINH_THOI_GIAN = 60000 * 60;// giay 1h
 
     Calendar mCurrentSelectedDate;
+    AdView adView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -125,6 +126,11 @@ public class FragmentBackground extends Fragment {
         setEvent();
         setAnimation();
         getFontFromSetting();
+
+//        ads
+        MobileAds.initialize(getActivity(), getString(R.string.ADMOB_APP_ID));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
         return view;
     }
 
@@ -751,6 +757,7 @@ public class FragmentBackground extends Fragment {
     }
 
     private void setControl(View view) {
+        adView = view.findViewById(R.id.adView);
         viewPager = view.findViewById(R.id.viewPager2);
         tabLayout = view.findViewById(R.id.tab_indicator);
         lnYOM = view.findViewById(R.id.lnYOM);

@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".Notification.App"
@@ -20,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <!-- android:requestLegacyExternalStorage="true" xin quyen android 10-->
         <!-- tools:ignore="GoogleAppIndexingWarning" xin quyen android 10-->
         <!--android:largeHeap="true"-->
@@ -48,6 +50,9 @@
         <activity
             android:name=".Main"
             android:screenOrientation="portrait" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/ADMOB_APP_ID"/>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">

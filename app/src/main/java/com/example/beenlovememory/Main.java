@@ -104,8 +104,8 @@ public class Main extends AppCompatActivity {
         viewPager.setAdapter(fragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setBackground(null);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_settings_black_24dp);
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_receipt_black_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_settings_24);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_receipt_24);
         viewPager.setCurrentItem(1);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
