@@ -77,7 +77,7 @@ public class Main extends AppCompatActivity {
     private void checkBG() {
         //ảnh có sẵn
         if (sharedPreferences.contains("IMAGES")) {
-            int nIMGS = sharedPreferences.getInt("IMAGES", R.drawable.img_bg1);
+            int nIMGS = sharedPreferences.getInt("IMAGES", R.drawable.img_bg2);
             frameLayout.setBackgroundResource(nIMGS);
         }
         //ảnh từ camera/thư viện của device
