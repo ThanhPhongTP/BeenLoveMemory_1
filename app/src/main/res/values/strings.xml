@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">Been love memory</string>
 
     <string name="ADMOB_APP_ID" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ADS_ID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
 
     <string-array name="tablayout">
