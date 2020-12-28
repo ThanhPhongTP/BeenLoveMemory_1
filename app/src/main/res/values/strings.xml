@@ -95,6 +95,8 @@
     <string name="phienban">Version (3.1.1)</string>
 
     <string name="Nhap">Enter</string>
+    <string name="save">Save</string>
+
 
 <!--    12 con giáp-->
     <string name="Aries">Aries</string>
@@ -109,5 +111,25 @@
     <string name="Capricorn">Capricorn</string>
     <string name="Aquarius">Aquarius</string>
     <string name="Pisces">Pisces</string>
+
+<!--    Dialog-->
+    <string name="BD">change of birth date</string>
+    <string name="bgcl">change background color</string>
+    <string name="gender_change">gender change</string>
+
+    <string name="avatar_change">avatar change</string>
+    <string name="cpf">Change photo frame</string>
+    <string name="change_name">change name</string>
+
+    <string name="c_date">change the date</string>
+    <string name="title_above">Change the title above</string>
+    <string name="title_below">Change the title below</string>
+    <string name="Change_background">Change background</string>
+    <string name="Reshape_BLM">Reshape BLM</string>
+    <string name="Screen_capture">Screen capture</string>
+
+    <string name="pin">PIN Number</string>
+    <string name="pattern">Pattern</string>
+
 
 </resources>

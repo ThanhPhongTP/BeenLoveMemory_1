@@ -59,4 +59,19 @@
     <string name="lite">Giao diện Lite</string>
     <string name="ll">Khóa màn hình tình yêu</string>
     <string name="touchBML">1 chạm BLM</string>
+    <string name="BD">Đổi ngày sinh nhật</string>
+    <string name="bgcl">Đổi màu nền</string>
+    <string name="gender_change">Đổi giới tính</string>
+    <string name="avatar_change">Đổi ảnh đại diện</string>
+    <string name="cpf">Đổi khung ảnh</string>
+    <string name="change_name">Đổi tên hiển thị</string>
+    <string name="c_date">Thay đổi ngày</string>
+    <string name="title_above">Đổi tiêu đề trên</string>
+    <string name="title_below">Đổi tiêu đề dưới</string>
+    <string name="Change_background">Đổi hình nền</string>
+    <string name="Reshape_BLM">Đổi hình dáng BLM</string>
+    <string name="Screen_capture">Chụp ảnh màn hình</string>
+    <string name="save">Lưu</string>
+    <string name="pin">Mã Pin</string>
+    <string name="pattern">Hình vẽ</string>
 </resources>

@@ -40,7 +40,7 @@ public class LockSettingActivity extends AppCompatActivity {
     }
 
     private void showDialogOptions() {
-        final String[] items = {"Mã PIN", "Hình vẽ"};
+        final String[] items = {getString(R.string.pin), getString(R.string.pattern)};
         AlertDialog.Builder b = new AlertDialog.Builder(this);
 //        b.setTitle("");
         b.setItems(items, new DialogInterface.OnClickListener() {

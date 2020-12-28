@@ -164,7 +164,8 @@ public class FragmentMain extends Fragment {
 
 
     private void showDialogOptions() {
-        final String[] items = {"Thay đổi ngày", "Đổi tiêu đề trên", "Đổi tiêu đề dưới", "Đổi hình nền", "Đổi hình dáng BLM", "Chụp ảnh màn hình"};
+        final String[] items = {getString(R.string.c_date), getString(R.string.title_above), getString(R.string.title_below),
+                getString(R.string.Change_background), getString(R.string.Reshape_BLM), getString(R.string.Screen_capture)};
         AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
 //        b.setTitle("");
 

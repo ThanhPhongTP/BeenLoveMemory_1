@@ -676,7 +676,7 @@ public class FragmentBackground extends Fragment {
 
     //Dialog name, avatar, photo border
     private void showDialogOptions1() {
-        final String[] items = {"Đổi ảnh đại diện", "Đổi khung ảnh", "Đổi tên hiển thị"};
+        final String[] items = {getString(R.string.avatar_change), getString(R.string.cpf), getString(R.string.change_name)};
         AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
 //        b.setTitle("");
         b.setItems(items, new DialogInterface.OnClickListener() {
@@ -698,7 +698,7 @@ public class FragmentBackground extends Fragment {
 
     //Dialog color, birthday, Zodiac
     private void showDialogOptions2() {
-        final String[] items = {"Đổi ngày sinh nhật", "Đổi màu nền", "Đổi giới tính"};
+        final String[] items = {getString(R.string.BD), getString(R.string.bgcl), getString(R.string.gender_change)};
         AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
 //        b.setTitle("");
         b.setItems(items, new DialogInterface.OnClickListener() {
